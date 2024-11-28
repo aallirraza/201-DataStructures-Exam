@@ -36,23 +36,5 @@ public class Queue {
         return result;
     }
 
-  public int largest(){
-        if(isEmpty()){
-            return Integer.MIN_VALUE;
-        }
-        Queue tempQueue=new Queue();
-        int max=Integer.MIN_VALUE;
-        while(!isEmpty()){
-            Element current=dequeue();
-            if(current.getValue()>max){
-                max=current.getValue();
-            }
-            tempQueue.enqueue(current);
-        }
-        while(!tempQueue.isEmpty()){
-            enqueue(tempQueue.dequeue());
-        }
-        return max;
-  }
 
 }
